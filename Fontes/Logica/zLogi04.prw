@@ -4,7 +4,7 @@
 
 // 2. Documentação da Função / Identificação
 
-/*/{Protheus.doc} nomeFunction
+/*/{Protheus.doc} zLogi04
 (long_description)
 @type user function
 @author Gabriel Viana
@@ -14,7 +14,7 @@
 /*/
 
 // 3. Abertura de um programa
-User Function nomeFunction()
+User Function zLogi04()
 
    Local aArea     := GetArea()
    Local dData     := Date()
@@ -23,7 +23,7 @@ User Function nomeFunction()
 
 
    // 4. Corpo do programa
-   MsgInfo("Estamos no ["+ cNome "], hoje é " + dToC(dData) + ", às "+ choraAtu, "Atenção")
+   MsgInfo("Estamos no ["+ cNome + "], hoje é " + dToC(dData) + ", às "+ choraAtu, "Atenção")
    MsgInfo("Ontem seria "+ dToC(daySub(dData, 1)), "Atenção")
    MsgInfo("Mês passado seria "+ dToC(MonthSub(dData, 1)), "Atenção")
 
@@ -31,4 +31,5 @@ User Function nomeFunction()
 
    RestArea(aArea)
      
+
 Return 
