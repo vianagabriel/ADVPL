@@ -13,12 +13,23 @@ Demonstrando os tipos de dados em Advpl
 @since 25/07/2024
 /*/
 
-/*/ ---- Variáveis locais só funcionam dentro da função que criou ela 
-   
+
+/*/  ESCOPOS das variáveis
+
+    ---- Variáveis Local só funcionam dentro da função que criou ela, tem escopo Local
+
+    ---- Variávies Private são acessiveis não apenas dentro da função em que foram declaradas,
+         mas também em qualquer função que seja chamada a partir dessa função.
+
+    ---- Variáveis Static são limitadas ao escopo do arquivo fonte, porém elas ficam visiveis para 
+         todas funções que esse fonte tiver diferente da private que para ficar visivel necessita 
+         que a função que vai usar -la seja chamada dentro da função que a criou
+    
+    ---- Variávies public são globais e podem ser acessadas por qualquer parte do programa, em qualquer módulo ou função
+         IMPORTANTEE -> Use elas apenas quando realmente necessário. Prefira usar varuáveis locais, privadas ou estáticas.
 /*/ 
 
 User Function zLogi06()
-
  Local   aArea       := GetArea()
  Local   cNome       := "Gabriel"
  Private cSobrenome  := "Viana"
