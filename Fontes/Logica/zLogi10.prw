@@ -13,7 +13,6 @@ User Function zLogi10()
  local nPosicao
 
  /*/ Array multidimensional /*/
-
  aAdd(aPessoas, {"Gabriel", SToD("19991203"), "São Paulo"})
  aAdd(aPessoas, {"Rebeca", SToD("20020613"), "São Paulo"})
 
@@ -36,3 +35,5 @@ User Function zLogi10()
 
  restArea(aArea)
 Return 
+
+
