@@ -35,5 +35,3 @@ User Function zLogi10()
 
  restArea(aArea)
 Return 
-
-
