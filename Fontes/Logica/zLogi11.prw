@@ -7,6 +7,10 @@
 @since 30/07/2024
 /*/
 
+// O Do Case é uma estrutura de controle de fluxo usada para executar diferentes blocos de código
+// com base em condições específicas. 
+// Funciona de forma semelhante a um switch em outras linguagens de programação
+
 User Function zLogi11()
 	local aAarea := GetArea()
 	local cNome  := ""
