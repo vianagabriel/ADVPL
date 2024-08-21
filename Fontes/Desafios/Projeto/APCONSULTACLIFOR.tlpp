@@ -1,0 +1,46 @@
+#include "totvs.ch"
+
+
+/*/{Protheus.doc} U_CONSULTACLIFOR
+    
+    @type  Function
+    @author Gabriel Viana
+    @since 20/08/2024
+    @version version
+    @see 
+    /*/
+Function U_CONSULTACLIFOR()
+   
+   /*/
+       Verificando se as variáveis cCodClienteFornecedor e cLojaClienteFornecedor já existem.
+       Se existir é feito a inicialização limpando o que está salvo nela e com o método tamSX3 está sendo passado o tamanho do campo
+       de código e de loja da tabela de clientes -> SA1
+   /*/
+   IF type("cCodClienteFornecedor") == "C"
+        cCodClienteFornecedor   := space(tamSX3("A1_COD")[1]) 
+        cLojaClienteFornecedor  := space(tamSX3("A1_LOJA")[1]) 
+   Else 
+   /*/
+      Se não existir elas vão ser declaradas como publicas pois é necessário seus valores fiquem salvos depois da execução do programa           
+   /*/
+        Public cCodClienteFornecedor   := space(tamSX3("A1_COD")[1]) as character
+        Public cLojaClienteFornecedor  := space(tamSX3("A1_LOJA")[1]) as character
+   EndIF
+
+   IF M->Z51_TPINTE == "C" // Integração com cadastros de fornecedores
+
+        IF conpad1(,,,"SA2")
+            cCodClienteFornecedor   := SA2->A2_COD
+            cLojaClienteFornecedor  := SA2->A2_LOJA
+            return .T.
+        EndIF
+   Else   // Integração com cadastros de fornecedores
+        IF conpad1(,,,"SA1")
+            cCodClienteFornecedor   := SA1->A1_COD
+            cLojaClienteFornecedor  := SA1->A1_LOJA
+            return .T.
+        EndIF
+    EndIF
+
+
+Return .F.
