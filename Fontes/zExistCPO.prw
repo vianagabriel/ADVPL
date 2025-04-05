@@ -18,8 +18,8 @@ Return
 Static Function VerificaCliente(cCodCli, cLoja)
    Local lRet :=  .T. 
 
-
-   If ExistCPO("SA1", cCodCli + cLoja) // Verifica se o conteúdo especificado existe na SA1, neste caso verificando um cliente passando o indice
+   // Verifica se o conteúdo especificado existe na SA1, neste caso verificando um cliente passando o indice
+   If ExistCPO("SA1", cCodCli + cLoja) 
         FwAlertInfo("Cliente existe","Atenção")
 
    Else 
