@@ -11,14 +11,16 @@
 @version 1.0
 /*/
 User Function ZD1MVC()
-    Private aRotina  := menuDef() // recebendo o que a menuDef está retornando
+    Local   aArea    := GetArea()
     Private oBrowse  := FWMBrowse():New() // criando o objeto browse
+    Private aRotina  := menuDef() // recebendo o que a menuDef esta retornando
     
     
     oBrowse:setAlias('ZD1')// Tabela que será utilizada
     oBrowse:setDescription('Artistas')// Descrição
     oBrowse:activate()// Ativando o Browse
 
+    RestArea(aArea)
 Return 
 
 /*/{Protheus.doc}  MenuDef
@@ -31,7 +33,8 @@ Return
 
 Static Function menuDef
     Local aRotina := {} 
-
+    
+    // Adicionando opcoes do menu
     ADD OPTION aRotina TITLE 'Pesquisar'    ACTION  'axPesqui'                          OPERATION 1   ACCESS 0
     ADD OPTION aRotina TITLE 'Visualizar'   ACTION  'VIEWDEF.ZD1MVC'                    OPERATION 2   ACCESS 0
     ADD OPTION aRotina TITLE 'Incluir'      ACTION  'VIEWDEF.ZD1MVC'                    OPERATION 3   ACCESS 0
@@ -57,6 +60,7 @@ Static Function modelDef
 
     oModel:addFields('ZD1MASTER',,oStruct)
     oModel:setDescription('Artistas')
+    // oModel:GetModel('ZD1MASTER'):setDescription('Artistas teste')
     oModel:setPrimaryKey({'ZD1_COD'})
 
 Return oModel 
